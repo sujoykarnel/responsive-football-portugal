@@ -1,6 +1,17 @@
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+
+@keyframes football-slider {
+    0% {
+        right: 200px;
+    }
+    100% {
+        right: 500px;
+    }
+    
+}
+
 /* common style & utilities */
 body{
     font-family: 'Poppins', sans-serif;
@@ -12,16 +23,29 @@ main{
     align-items: center;
 }
 .container{
-    width: 1050px;
+    max-width: 1050px;
     margin-top: 70px;
 }
 .buttons{
     font-weight: 500;
     font-size: 16px;
     color: #FFFFFF;
+    text-decoration: none;
     background-color: #E02C6D;
     padding: 10px 24px;
 }
+p{
+    color: #6C6C6C;
+    font-size: 16px;
+    line-height: 26px;
+}
+h4{
+    font-size: 48px;
+}
+h5{
+    font-size: 24px;
+}
+
 
 /* header styles */
 header{
@@ -45,7 +69,7 @@ header{
 }
 .banner{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
 }
@@ -55,9 +79,19 @@ header{
     font-size: 64px;
     line-height: 80px;
 }
-.banner-photo img{
+.banner-photo .banner-player{
     width: 100%;
     text-align: center;
+}
+.banner-photo .football{
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 200px;
+    
+}
+header:hover>.banner>.banner-photo>.football{
+    animation: football-slider 2s ease-in-out 0s infinite alternate;
 }
 
 /* players section styles  */
@@ -80,10 +114,8 @@ header{
     margin: 10px 0px;
 }
 .player-info p{
-    color: #6C6C6C;
-    font-size: 16px;
     margin: 10px 0px;
-    line-height: 26px;
+    
 }
 
 /* highlight section styles */
@@ -95,14 +127,60 @@ header{
     justify-content: center;
     align-items: center;
 }
+
 .highlight-photo img{
     width: 100%;
 }
 
 /* about section styles */
-
 .abouts-photo img{
     width: 100%;
 }
+.rating{
+    font-weight: 700;
+}
+.rating .fa-star{
+    color: gold;
+}
 /* latest-matches section styles */
+#match-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+/* footer section styles */
+footer{
+    max-width: 485px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+    text-align: center;
+    margin-top: 158px;
+    margin-bottom: 65;
+}
+.footer-images img{
+    width: 100%;
+}
+footer .social-media{
+    display: flex;
+    justify-content: center;
+}
+footer .social-media a{
+    text-decoration: none;
+    color: gray;
+    font-size: 32px;
+    padding: 0 5px;
+}
+
+/* media query */
+
+/* for mobile devices */
+@media only screen and (max-width: 688px;) {
+    .container{
+        max-width: 100%;
+    }
+    .banner, .players{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
