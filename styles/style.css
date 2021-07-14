@@ -4,10 +4,10 @@
 
 @keyframes football-slider {
     0% {
-        right: 200px;
+        left: 80%;
     }
     100% {
-        right: 500px;
+        Left: 20%;
     }
     
 }
@@ -17,14 +17,13 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-main{
+header, main, footer{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .container{
-    max-width: 1050px;
-    margin-top: 70px;
+    width: 1050px;
 }
 .buttons{
     font-weight: 500;
@@ -38,6 +37,7 @@ p{
     color: #6C6C6C;
     font-size: 16px;
     line-height: 26px;
+    text-align: justify;
 }
 h4{
     font-size: 48px;
@@ -48,64 +48,72 @@ h5{
 
 
 /* header styles */
+
 header{
-    display: flex;
-    flex-direction: column;
+    padding: 60px 0;
     background-color: #2D25A0;
-    padding: 42px 156px;
+    margin-bottom: 70px;
 }
 .header-top{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    color: #FFFFFF;
 }
-.header-top nav a{
+.header-top> nav > a{
     font-weight: 500;
     font-size: 16px;
     color: #FFFFFF;
     text-decoration: none;
     margin-right: 16px;
+    padding: 10px;
 }
 .banner{
+    width: 1050px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
 }
+.banner-note{
+    width: 100%;
+    padding: 10px;
+
+}
 .banner-note h2{
+    width: 100%;
     font-weight: 700;
     color: #FFFFFF;
     font-size: 64px;
     line-height: 80px;
+    margin: 0;
+}
+.banner-photo{
+    width: 100%;
 }
 .banner-photo .banner-player{
     width: 100%;
-    text-align: center;
 }
-.banner-photo .football{
+.banner-photo .football {
     width: 50px;
-    position: absolute;
+    position: relative;
     bottom: 0;
-    right: 200px;
-    
+    left: 80%;
 }
-header:hover>.banner>.banner-photo>.football{
+header:hover>.header-section>.banner>.banner-photo>.football{
     animation: football-slider 2s ease-in-out 0s infinite alternate;
 }
-
 /* players section styles  */
 
 .players{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
+    grid-gap: px;
+    margin-bottom: 70px;
 }
 .player {
     padding: 15px;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
 }
-.thumbnail img{
+.thumbnail> img{
     width: 300px;
 }
 .player-info h3{
@@ -118,7 +126,7 @@ header:hover>.banner>.banner-photo>.football{
     
 }
 
-/* highlight section styles */
+/* highlight, About & Latest Match section styles */
 
 .highlight, .abouts, .latest-matches {
     display: grid;
@@ -126,6 +134,14 @@ header:hover>.banner>.banner-photo>.football{
     grid-column-gap: 66px;
     justify-content: center;
     align-items: center;
+    
+}
+/* highlight section styles */
+.highlights{
+    margin-bottom: 70px;
+}
+.highlight-info{
+    margin-bottom: 50px;
 }
 
 .highlight-photo img{
@@ -133,6 +149,9 @@ header:hover>.banner>.banner-photo>.football{
 }
 
 /* about section styles */
+.about-section{
+    margin-bottom: 70px;
+}
 .abouts-photo img{
     width: 100%;
 }
@@ -150,16 +169,17 @@ header:hover>.banner>.banner-photo>.football{
 }
 
 /* footer section styles */
-footer{
+
+.footer-section{
     max-width: 485px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
     grid-column-gap: 20px;
-    text-align: center;
     margin-top: 158px;
     margin-bottom: 65;
 }
-.footer-images img{
+.footer-images img {
     width: 100%;
 }
 footer .social-media{
@@ -171,16 +191,49 @@ footer .social-media a{
     color: gray;
     font-size: 32px;
     padding: 0 5px;
+    text-align: center;
+}
+.copyright p{
+    text-align: center;
 }
 
 /* media query */
 
 /* for mobile devices */
-@media only screen and (max-width: 688px;) {
+@media only screen and (max-width: 688px){
+    
+    header, main, footer {
+        width: 100%;
+    }
     .container{
         max-width: 100%;
     }
-    .banner, .players{
+    .banner, .players, .highlight, .abouts, .latest-matches{
         grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
     }
+    .banner h2 {
+        font-size: 36px;
+        max-width: 70%;
+    }
+    .highlight-info h4{
+        font-size: 30px;
+    }
+    .player{
+        text-align: center;
+        justify-content: center;
+    }
+}
+/* for tablet device */
+@media only screen and (min-width: 688px) and (max-width: 992px) {
+    .container{
+        max-width: 100%;
+    }
+    header{
+        padding: 0;
+    }
+    .players {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
 }
