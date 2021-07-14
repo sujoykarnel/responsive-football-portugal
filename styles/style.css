@@ -84,7 +84,7 @@ header{
     color: #FFFFFF;
     font-size: 64px;
     line-height: 80px;
-    margin: 0;
+    margin-top: 27px;
 }
 .banner-photo{
     width: 100%;
@@ -131,7 +131,7 @@ header:hover>.header-section>.banner>.banner-photo>.football{
 .highlight, .abouts, .latest-matches {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 66px;
+    grid-column-gap: 50px;
     justify-content: center;
     align-items: center;
     
@@ -142,6 +142,12 @@ header:hover>.header-section>.banner>.banner-photo>.football{
 }
 .highlight-info{
     margin-bottom: 50px;
+}
+.highlight-info h4{
+    margin-bottom: 8px;
+}
+.highlight-info p{
+    margin-bottom: 24px;
 }
 
 .highlight-photo img{
@@ -219,9 +225,8 @@ footer .social-media a{
     .highlight-info h4{
         font-size: 30px;
     }
-    .player{
+    .player .thumbnail{
         text-align: center;
-        justify-content: center;
     }
 }
 /* for tablet device */
@@ -234,6 +239,9 @@ footer .social-media a{
     }
     .players {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .player .thumbnail {
+        text-align: center;
     }
     
 }
