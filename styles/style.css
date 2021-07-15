@@ -106,7 +106,7 @@ header:hover>.header-section>.banner>.banner-photo>.football{
 .players{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: px;
+    grid-gap: 30px;
     margin-bottom: 70px;
 }
 .player {
