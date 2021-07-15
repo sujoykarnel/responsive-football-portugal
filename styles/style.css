@@ -247,5 +247,8 @@ footer .social-media a{
     .player .thumbnail {
         text-align: center;
     }
+    .highlight-info h4{
+        font-size: 30px;
+    }
     
 }
